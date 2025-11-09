@@ -1,11 +1,11 @@
 /* ---------- Base setup ---------- */
 :root {
-  /* Refreshed greenish-blue color palette */
-  --bg: #071e22;         /* dark teal background */
-  --card: #0e2d33;       /* slightly lighter teal for cards */
-  --text: #e6f3f2;       /* soft white-blue for text */
-  --muted: #9bb4b3;      /* muted grey-green text */
-  --accent: #1abc9c;     /* main accent: turquoise green */
+  /* Greenish-blue palette */
+  --bg: #071e22;
+  --card: #0e2d33;
+  --text: #e6f3f2;
+  --muted: #9bb4b3;
+  --accent: #1abc9c;
   --radius: 12px;
   --max-width: 1100px;
   font-family: 'Inter', system-ui, sans-serif;
@@ -26,7 +26,6 @@ body {
   scroll-behavior: smooth;
 }
 
-/* Limit width + padding */
 main, header, footer {
   max-width: var(--max-width);
   margin: 0 auto;
@@ -56,14 +55,12 @@ header {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: transparent;
 }
 
 .logo img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  display: block;
 }
 
 .name {
@@ -118,21 +115,13 @@ nav a:hover {
   line-height: 1.7;
 }
 
-.hero-image {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
 .hero-image img {
-  display: block;
   width: 230px;
   height: 230px;
   border-radius: 50%;
-  object-fit: cover;
   border: 3px solid var(--accent);
+  object-fit: cover;
   box-shadow: 0 0 35px rgba(26, 188, 156, 0.5);
-  background-color: transparent;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
@@ -176,11 +165,6 @@ nav a:hover {
   color: #041229;
   transform: translateY(-2px);
   box-shadow: 0 6px 20px rgba(26, 188, 156, 0.5);
-}
-
-.btn:focus {
-  outline: 2px solid var(--accent);
-  outline-offset: 3px;
 }
 
 /* ---------- About ---------- */
@@ -393,121 +377,47 @@ footer {
   box-shadow: 0 3px 10px rgba(26, 188, 156, 0.4);
 }
 
-/* ---------- Responsive ---------- */
-/* ---------- Responsive (Mobile <768px) ---------- */
-@media (max-width: 768px) {
-
-  /* Stack header neatly */
-  header {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 10px;
-  }
-
-  nav {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-    margin-top: 6px;
-  }
-
-  nav a {
-    margin: 0;
-    padding: 6px 10px;
-    background: rgba(26, 188, 156, 0.1);
-    border-radius: 6px;
-    color: var(--accent);
-    font-size: 14px;
-    transition: background 0.3s;
-  }
-
-  nav a:hover {
-    background: var(--accent);
-    color: #041229;
-  }
-
-  /* Hero section */
-  #hero {
-    padding: 50px 16px;
-    text-align: center;
-  }
-
-  .hero-content {
-    flex-direction: column;
-    gap: 24px;
-    align-items: center;
-    justify-content: center;
-  }
-
-  .hero-text h2 {
-    font-size: 28px;
-    line-height: 1.3;
-  }
-
-  .hero-text p {
-    font-size: 15px;
-    line-height: 1.6;
-    color: var(--muted);
-    margin-bottom: 20px;
-  }
-
-  .hero-image img {
-    width: 160px;
-    height: 160px;
-    border: 2.5px solid var(--accent);
-    box-shadow: 0 0 20px rgba(26, 188, 156, 0.4);
-  }
-
-  .cta {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    align-items: center;
-  }
-
-  .btn {
-    width: 80%;
-    max-width: 250px;
-  }
-
-  /* Adjust project cards for better spacing */
-  .project {
-    padding: 18px;
-  }
-
-  .project img {
-    width: 100%;
-    border-radius: 6px;
-  }
-
-  /* Reduce card padding for sections */
-  #about, #internship, #achievements, #contact {
-    padding: 24px 18px;
-  }
-}
-
-/* ---------- Mini Game ---------- */
+/* ---------- Mini Game (Responsive + Centered) ---------- */
 #game {
   background: var(--card);
-  padding: 30px;
+  padding: 30px 20px;
   border-radius: var(--radius);
   margin-bottom: 40px;
   text-align: center;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
 }
 
 .guess-game {
-  margin-top: 16px;
+  margin-top: 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+.guess-game h3 {
+  color: var(--accent);
+  margin-bottom: 8px;
+  font-size: 20px;
+}
+
+.guess-game p {
+  color: var(--muted);
+  font-size: 15px;
+  margin: 0;
+  line-height: 1.5;
 }
 
 .guess-game input {
-  padding: 8px 12px;
+  padding: 10px 14px;
   border-radius: 8px;
-  border: 1px solid var(--accent);
+  border: 1.5px solid var(--accent);
   background: transparent;
   color: var(--text);
-  width: 160px;
+  width: 70%;
+  max-width: 220px;
   text-align: center;
-  margin-right: 8px;
+  font-size: 16px;
 }
 
 .guess-game button {
@@ -515,16 +425,120 @@ footer {
   color: #041229;
   border: none;
   border-radius: 8px;
-  padding: 8px 14px;
+  padding: 10px 16px;
   font-weight: 600;
   cursor: pointer;
+  font-size: 15px;
+  width: 70%;
+  max-width: 220px;
+  transition: all 0.3s ease;
 }
 
 .guess-game button:hover {
   background: #20c9a4;
+  transform: translateY(-2px);
 }
 
-.guess-game p {
-  margin-top: 12px;
+.guess-game #result {
+  margin-top: 10px;
+  font-size: 15px;
 }
 
+.guess-game #lives {
+  font-size: 14px;
+  color: var(--muted);
+}
+
+/* ---------- Enhanced Responsive (Mobile <768px) ---------- */
+@media (max-width: 768px) {
+
+  main, header, footer {
+    padding: 16px;
+  }
+
+  header {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 10px;
+  }
+
+  nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 6px;
+  }
+
+  nav a {
+    padding: 6px 10px;
+    background: rgba(26, 188, 156, 0.1);
+    border-radius: 6px;
+    color: var(--accent);
+    font-size: 14px;
+    font-weight: 600;
+  }
+
+  #hero {
+    padding: 40px 10px;
+    text-align: center;
+  }
+
+  .hero-content {
+    flex-direction: column;
+    gap: 24px;
+    align-items: center;
+  }
+
+  .hero-text h2 {
+    font-size: 26px;
+  }
+
+  .hero-text p {
+    font-size: 15px;
+    padding: 0 10px;
+  }
+
+  .hero-image img {
+    width: 150px;
+    height: 150px;
+  }
+
+  .btn {
+    width: 85%;
+    max-width: 260px;
+  }
+
+  section {
+    padding: 20px;
+    margin-bottom: 25px;
+  }
+
+  h2 {
+    font-size: 20px;
+  }
+
+  .project {
+    padding: 16px;
+  }
+
+  li {
+    font-size: 14px;
+    line-height: 1.5;
+  }
+
+  #game {
+    padding: 24px 16px;
+  }
+
+  .guess-game input,
+  .guess-game button {
+    width: 90%;
+  }
+
+  footer {
+    font-size: 13px;
+    padding: 16px;
+  }
+}
