@@ -282,6 +282,33 @@ nav a:hover {
   margin-bottom: 8px;
 }
 
+/* ---------- Position of Responsibility ---------- */
+#responsibility {
+  background: var(--card);
+  padding: 30px;
+  border-radius: var(--radius);
+  margin-bottom: 30px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
+}
+
+#responsibility h2 {
+  color: var(--text);
+  margin-bottom: 16px;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+#responsibility ul {
+  margin-top: 12px;
+  color: var(--muted);
+  padding-left: 20px;
+}
+
+#responsibility li {
+  margin-bottom: 8px;
+  line-height: 1.6;
+}
+
 /* ---------- Contact ---------- */
 #contact {
   background: var(--card);
@@ -458,3 +485,46 @@ footer {
     padding: 24px 18px;
   }
 }
+
+/* ---------- Mini Game ---------- */
+#game {
+  background: var(--card);
+  padding: 30px;
+  border-radius: var(--radius);
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+.guess-game {
+  margin-top: 16px;
+}
+
+.guess-game input {
+  padding: 8px 12px;
+  border-radius: 8px;
+  border: 1px solid var(--accent);
+  background: transparent;
+  color: var(--text);
+  width: 160px;
+  text-align: center;
+  margin-right: 8px;
+}
+
+.guess-game button {
+  background: var(--accent);
+  color: #041229;
+  border: none;
+  border-radius: 8px;
+  padding: 8px 14px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.guess-game button:hover {
+  background: #20c9a4;
+}
+
+.guess-game p {
+  margin-top: 12px;
+}
+
